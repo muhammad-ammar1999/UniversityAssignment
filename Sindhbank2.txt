@@ -1,0 +1,184 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication104;
+
+/**
+ *
+ * @author tuser
+ */
+import java.util.ArrayList;
+import java.util.Scanner;
+public class JavaApplication104 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args)
+    {
+        String name, accno;
+        double bal;
+        
+        Scanner sc = new Scanner(System.in);
+     
+         
+       {ArrayList<Bankaccount> arr = new ArrayList();
+       for (int i = 0; i < 10; i++) {
+System.out.println("bhai number daalo 1,2,3 ya 4");
+       int k = sc.nextInt();
+        
+            
+        
+       
+      
+         if(k==1){
+           System.out.print("Enter Name: ");
+           name = sc.next();
+           System.out.print("Enter Account number: ");
+           accno= sc.next();
+           System.out.print("Enter Balance: ");
+           bal=sc.nextDouble();
+           arr.add(new savingaccount(name, accno, bal));
+           
+       
+       }
+       if (k==2)
+       {
+           System.out.print("Enter Name: ");
+           name = sc.next();
+           System.out.print("Enter Account number: ");
+           accno= sc.next();
+           System.out.print("Enter Balance: ");
+           bal=sc.nextDouble();
+           arr.add(new checkingaccount(name, bal, accno));
+           
+           }
+      if(k==3){
+       for(Bankaccount obj:arr)
+       {
+      if(obj instanceof savingaccount){
+          ((savingaccount) obj).postinterest(1.2);
+      
+      System.out.println(obj);
+      
+      
+      }
+          
+          
+          
+      }      
+  
+    
+      }
+    if(k==4){
+    System.out.println(arr);
+    
+    
+    }
+      }
+        }
+    
+    }
+}
+ class Bankaccount
+ {
+     private double balance;
+     private String owner;
+     private String accountno;
+    //Bankaccount BA =new Bankaccount(Bankaccount oldaccount,double amount);
+     public Bankaccount(String name,double amount,String accountnum)
+     {
+     this.owner=name;
+     this.balance = amount;
+     this.accountno=accountnum;
+     }
+ public Bankaccount(Bankaccount oldaccount ,double amount)
+  {
+      this.owner=oldaccount.owner;
+      this.balance =oldaccount.balance+amount;
+      this.accountno= oldaccount.accountno; 
+ }
+ public void deposit(double amount)
+ {
+ this.balance=balance+amount;
+ }
+ public boolean withdraw(double amount){
+ 
+  this.balance=balance-amount;
+return true;
+ }
+ public double getbalance(){
+ return this.balance;
+ }
+ public String getowner(){
+ return this.owner;
+ }
+ public String getaccountno(){
+ return this.accountno;
+ }
+ public void setbalance(double amount){
+ this.balance=amount;
+ }
+ public void setaccountnumber(String newaccountnumber){
+ this.accountno=newaccountnumber;
+ }
+ 
+     @Override
+ public String toString()
+ {
+     return balance +" "+ owner +" "+ accountno;
+ }
+ }
+ class checkingaccount extends Bankaccount{
+ 
+ private double fee;
+ public checkingaccount(String name,double amount,String accountno){
+         
+super(name,amount, accountno);             
+         }
+ public boolean withdraw(double amount){
+if(getbalance()>=amount+fee){
+return true;
+}else{
+return false;
+}
+     
+ }
+ 
+ }   
+    class savingaccount extends Bankaccount{
+ 
+ private double rate;
+ private int savingno;
+ public savingaccount(String name,String accountno ,double amount)
+ {
+super(name,amount,accountno);
+         
+             
+ }
+ public savingaccount(savingaccount oldaccount){
+     
+super(oldaccount.getowner(),oldaccount.getbalance(),oldaccount.getaccountno());
+
+ }
+ public void postinterest(double rate){
+ deposit (getbalance()*rate);
+ }
+     @Override
+ public String toString()
+ {
+     return  this.getowner()+" "+this.getbalance() +" "+ this.getaccountno();
+ }
+ 
+ }    
+    
+    
+    
+    
+    
+    
+
+
+
