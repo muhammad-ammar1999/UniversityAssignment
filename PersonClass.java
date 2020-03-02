@@ -7,7 +7,7 @@ package javaapplication9;
 import java.util.*;
 /**
  *
- * @author Bilal
+ * @autor
  */
 public class JavaApplication9 {
 
