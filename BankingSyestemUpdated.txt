@@ -1,5 +1,5 @@
 // BankingSyestem most Updated version
-// sir sy bug remove krwa kr update krna hai 
+// sir sy bug remove krwa kr update krna hai
 
 package javaapplication1;
 import java.util.ArrayList;
