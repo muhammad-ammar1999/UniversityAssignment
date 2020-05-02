@@ -1,26 +1,24 @@
 
-package javaapplication1;
-//import java.util.
 class BankCustomer
 { 
     String _Name;
     String _BankAccountNumber;
    private int  _Balance;
-//    public BankCustomer(String Name,String BankAccountNumber,int Balance)
-//    {
-//       _Name= Name;
-//     _BankAccountNumber=BankAccountNumber;
-//      _Balance=Balance;
-//}
-    public void BankCustomerDetail(String Name,String BankAccountNumber,int Balance)
-    {
-        _Name= Name;
-        _BankAccountNumber=BankAccountNumber;
-        _Balance=Balance;
-      System.out.println(_Name +" "+ _BankAccountNumber +" "+ _Balance );
+   public BankCustomer(String Name,String BankAccountNumber,int Balance)
+   {
+      _Name= Name;
+    _BankAccountNumber=BankAccountNumber;
+     _Balance=Balance;
+}
+    // public void BankCustomerDetail(String Name,String BankAccountNumber,int Balance)
+    // {
+    //     _Name= Name;
+    //     _BankAccountNumber=BankAccountNumber;
+    //     _Balance=Balance;
+    //   System.out.println(_Name +" "+ _BankAccountNumber +" "+ _Balance );
              
               
-    }
+    // }
     public void Deposit(int Amount)
     {
         _Balance += Amount;
@@ -32,10 +30,7 @@ class BankCustomer
       System.out.println(_Balance );         
     } 
      
-}
-
-
-public class JavaApplication1 {
+    class Java1 {
 
 
  public static void main(String[] args) 
