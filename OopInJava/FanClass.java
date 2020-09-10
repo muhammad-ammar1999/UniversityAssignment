@@ -1,4 +1,4 @@
-package javaapplication6;
+
 class fan{
      private int speed;
       int slow=1;
@@ -51,9 +51,8 @@ public void setspeed(int speed){
 }
 
       
-public class JavaApplication6 {
+public class FanClass {
 
-    
     public static void main(String[] args) {
         
         fan f1=new fan();

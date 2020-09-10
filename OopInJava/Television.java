@@ -1,4 +1,4 @@
-package javaapplication5;
+
 
 class TV{
    int channel;
@@ -71,7 +71,7 @@ class TV{
 }
    
    
-public class JavaApplication5 {
+public class Television {
 
    
    
@@ -79,6 +79,7 @@ public class JavaApplication5 {
        
        TV tv1 =new TV();
      tv1.turnon();
+     System.out.println("Tv is off");
       
      
      
